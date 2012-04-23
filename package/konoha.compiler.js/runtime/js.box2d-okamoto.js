@@ -26,10 +26,10 @@ js.box2d.B2Vec2.prototype.getX() function() {
 js.box2d.B2Vec2.prototype.getY() function() {
 	return this.rawptr.y;
 }
-js.box2d.B2Vec2.prototype.setZero = function() {
+js.box2d.B2Vec2.prototype.SetZero = function() {
 	this.rawptr.SetZero();
 }
-js.box2d.B2Vec2.prototype.set = function() {
+js.box2d.B2Vec2.prototype.Set = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.Set(args[0], args[1]);
 }

@@ -67,16 +67,16 @@ js.Box2d.b2BodyDef = function(rawptr) {
  		this.rawptr.linearDamping = arg;
 	}
  	this.prototype.getLinearVelocity = function() { // b2Vec2
-		return this.rawptr.linearVelocity;
+		return new js.Box2d.b2Vec2(this.rawptr.linearVelocity);
 	}
 	this.prototype.setLinearVelocity = function(arg) {
-		this.rawptr.linearVelocity = arg;
+		this.rawptr.linearVelocity = arg.rawptr;
 	}
  	this.prototype.getPosition = function() { // b2Vec2
-		return this.rawptr.position;
+		return new js.Box2d.b2Vec2(this.rawptr.position);
 	}
 	this.prototype.setPosition = function(arg) {
-		this.rawptr.position = arg;
+		this.rawptr.position = arg.rawptr;
 	}
  	this.prototype.getPreventRotation = function() { // Boolean
 		return this.rawptr.preventRotation;
@@ -94,7 +94,7 @@ js.Box2d.b2BodyDef = function(rawptr) {
 		return new konoha.Array(this.rawptr.shapes);
 	}
 	this.prototype.setShapes = function(arg) {
-		this.rawptr.shapes = arg->rawptr;
+		this.rawptr.shapes = arg.rawptr;
 	}
 	this.prototype.getUserData = function() { // var
 		return this.rawptr.userData;
@@ -102,7 +102,6 @@ js.Box2d.b2BodyDef = function(rawptr) {
 	this.prototype.setUserData = function(arg) {
 		this.rawptr.userData = arg;
 	}
-
 //Pucilb Functions
 	this.prototype._new = function() {
 		this.rawptr = new b2BodyDef();
@@ -112,6 +111,10 @@ js.Box2d.b2BodyDef = function(rawptr) {
 		var args = verifyArgs(Array.prototype.slice.call(arguments));
 		return AddShape.apply(this.rawptr, args);
 	}
+	this.prototype._new = function() {
+		this.rawptr = new b2BodyDef();
+		return this;
+	}
 }
 
 js.box2d.b2Mat22 = function(rawptr) {
@@ -120,31 +123,89 @@ js.box2d.b2Mat22 = function(rawptr) {
 	this.prototype = new konoha.Object();
 
 //Public Properties
+	this.prototype.getCol1 = function() { // b2Vec2
+		return new js.Box2d.b2Vec2(this.rawptr.col1);
+	}
+	this.prototype.setCol1 = function(arg) {
+		this.rawptr.col1 = arg.rawptr;
+	}
+	this.prototype.getCol2 = function() { // b2Vec2
+		return js.Box2d.b2Vec2(this.rawptr.col1);
+	}
+	this.prototype.setCol2 = function(arg) {
+		this.rawptr.col1 = arg.rawptr;
+	}
 //Public Methods
+	this.prototype.Abs = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return Abs.apply(this.rawptr, args);
+	}
+	this.prototype.AddM = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return AddM.apply(this.rawptr, args);
+	}
+	this.prototype.Copy = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Mat22(Copy.apply(this.rawptr, args));
+	}
+	this.prototype.Invert = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Mat22(Invert.apply(this.rawptr, args));
+	}
+	this.prototype.Set = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return Set.apply(this.rawptr, args);
+	}
+	this.prototype.SetIdentify = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetIdentify.apply(this.rawptr, args);
+	}
+	this.prototype.SetM = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetM.apply(this.rawptr, args);
+	}
+	this.prototype.SetVV = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetVV.apply(this.rawptr, args);
+	}
+	this.prototype.SetZero = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetZero.apply(this.rawptr, args);
+	}
+	this.prototype.Solve = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(Solve.apply(this.rawptr, args));
+	}
+	this._new = function() {
+		this.rawptr = new b2Mat22();
+		return this;
+	}
 }
-	// this.prototype = function() {
-	// 	var args = verifyArgs(Array.prototype.slice.call(arguments));
-	// 	return .apply(this.rawptr, args);
-	// }
 
-
-js.Box2d.b2Mat22 = function(rawptr) {
-	this.rawptr = rawptr;
-	this.konohaclass = "js.box2d.b2Mat22";
-	this.prototype = new konoha.Object();
-
-}
-js.Box2d.b2Vec = function(rawptr) {
-	this.rawptr = rawptr;
-	this.konohaclass = "js.box2d.b2Vec";
-	this.prototype = new konoha.Object();
-}
 js.Box2d.PolyDef = function(rawptr) {
 	this.rawptr = rawptr;
 	this.konohaclass = "js.box2d.b2PolyDef";
 	this.prototype = new konoha.Object();
+//Public Properties
+	this.prototype.getVertexCount = function() {
+		return this.rawptr.vertexCount;
+	}
+	this.prototype.setVertexCount = function(arg) {
+		this.rawptr.vertexCount = arg.rawptr;
+	}
+//Public Functions
+	this.prototype._new = function() {
+		this.rawptr = new b2PolyDef();
+		return this;
+	}
 }
 
 
+
+
+	this.prototype = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return .apply(this.rawptr, args);
+	}
 
 

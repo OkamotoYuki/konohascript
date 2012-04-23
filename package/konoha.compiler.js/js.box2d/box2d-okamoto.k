@@ -20,3 +20,30 @@ class B2Vec2 {
 	B2Vec2 make(float x, float y);
 }
 B2Vec2 B2Vec2.new(float x, float y);
+
+class B2ShapeDef {
+	int getType();
+	void setType(int type);
+	float getLocalPosition();
+	void setLocalPosition(float lp);
+	float getLocalRotation();
+	void setLocalRotation(float lr);
+	float getFriction();
+	void setFriction(float f);
+	float getDensity();
+	void setDensity(float d);
+	int getCategoryBits();
+	void setCategoryBits(int cb);
+	int getMaskBits();
+	void setMaskBits(int mb);
+	int getGroupIndex();
+	void setGroupIndex(int gi);
+	void computeMass(B2MassData massData);
+}
+@OverrideB2ShapeDef B2ShapeDef.new();
+
+class B2BoxDef extends B2ShapeDef {
+	B2Vec2 getExtents();
+	void setExtents(B2Vec2 e);
+}
+@Override B2BoxDef B2BoxDef.new();

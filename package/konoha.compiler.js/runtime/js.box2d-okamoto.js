@@ -91,3 +91,99 @@ js.box2d.B2Vec2.prototype.make = function() {
 	var args = verifyArgs(arguments);
 	return this.rawptr.Make(args[0], args[1]);
 }
+
+/* b2ShapeDef */
+js.box2d.B2ShapeDef = function(rawptr) {
+	this.rawptr = rawptr;
+}
+js.box2d.B2ShapeDef.prototype = new konoha.Object();
+js.box2d.B2ShapeDef.prototype.konohaclass = "js.box2d.ShapeDef";
+js.box2d.B2ShapeDef.prototype._new = function() {
+	this.rawptr = new b2ShapeDef();
+	return this;
+}
+js.box2d.B2ShapeDef.prototype.getType = function() {
+	return this.rawptr.type;
+}
+js.box2d.B2ShapeDef.prototype.setType = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.type = args[0];
+}
+//js.box2d.B2ShapeDef.prototype.getUserData = function() {
+//	return this.userData;
+//}
+//js.box2d.B2ShapeDef.prototype.setUserData = function() {
+//	var args = verifyArgs(arguments);
+//	this.rawptr.userData = args[0];
+//}
+js.box2d.B2ShapeDef.prototype.getLocalPosition = function() {
+	return this.rawptr.localPosition;
+}
+js.box2d.B2ShapeDef.prototype.setLocalPosition = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.localPosition = args[0];
+}
+js.box2d.B2ShapeDef.prototype.getLocalRotation = function() {
+	return this.rawptr.localRotation;
+}
+js.box2d.B2ShapeDef.prototype.setLocalRotation = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.localRotation = args[0];
+}
+js.box2d.B2ShapeDef.prototype.getFriction = function() {
+	return this.rawptr.friction;
+}
+js.box2d.B2ShapeDef.prototype.setFriction = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.friction = args[0];
+}
+js.box2d.B2ShapeDef.prototype.getDensity = function() {
+	return this.rawptr.density;
+}
+js.box2d.B2ShapeDef.prototype.setDensity = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.density = args[0];
+}
+js.box2d.B2ShapeDef.prototype.getCategoryBits = function() {
+	return this.rawptr.categoryBits;
+}
+js.box2d.B2ShapeDef.prototype.setCategoryBits = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.categoryBits = args[0];
+}
+js.box2d.B2ShapeDef.prototype.getMaskBits = function() {
+	return this.rawptr.maskBits;
+}
+js.box2d.B2ShapeDef.prototype.setMaskBits = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.maskBits = args[0];
+}
+js.box2d.B2ShapeDef.prototype.getGroupIndex = function() {
+	return this.rawptr.groupIndex;
+}
+js.box2d.B2ShapeDef.prototype.setGroupIndex = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.groupIndex = args[0];
+}
+js.box2d.B2ShapeDef.prototype.computeMass = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.ComputeMass(args[0]);
+}
+
+/* b2BoxDef */
+js.box2d.B2BoxDef = function(rawptr) {
+	this.rawptr = rawptr;
+}
+js.box2d.B2BoxDef.prototype = new js.box2d.B2ShapeDef();
+js.box2d.B2BoxDef.prototype.konohaclass = "js.box2d.B2BoxDef";
+js.box2d.B2BoxDef.prototype._new = function() {
+	this.rawptr = new b2BoxDef();
+	return this;
+}
+js.box2d.B2BoxDef.prototype.getExtents = function() {
+	return this.rawptr.extents;
+}
+js.box2d.B2BoxDef.prototype.setExtents = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.extents = args[0];
+}

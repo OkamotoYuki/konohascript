@@ -8,6 +8,8 @@ var verifyArgs = function(args) {
 }
 
 js.box2d = function() {}
+
+/* b2Vec2 */
 js.box2d.B2Vec2 = function(rawptr) {
 	this.rawptr = rawptr;
 }

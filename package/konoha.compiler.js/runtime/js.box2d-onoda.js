@@ -203,9 +203,9 @@ js.Box2d.PolyDef = function(rawptr) {
 
 
 
-	this.prototype = function() {
-		var args = verifyArgs(Array.prototype.slice.call(arguments));
-		return .apply(this.rawptr, args);
-	}
+	// this.prototype = function() {
+	// 	var args = verifyArgs(Array.prototype.slice.call(arguments));
+	// 	return .apply(this.rawptr, args);
+	// }
 
 

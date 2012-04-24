@@ -149,3 +149,10 @@ class b2CollisionFilter {
 	b2CollisionFilter b2_defaultFilter;
 	boolean ShouldCollide(b2Shape shape1, b2Shape shape2);
 }
+
+class b2WorldListener {
+	int b2_destroyBody = 1;
+	int b2_freezeBody = 0;
+	int NotifyBoundaryViolated(b2Body body);
+	void NotifyJointDestroyed(b2Joint joint);
+}

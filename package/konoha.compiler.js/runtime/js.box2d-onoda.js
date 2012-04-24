@@ -658,3 +658,26 @@ js.Box2d.b2CollisionFilter = function(rawptr) {
 		return ShouldCollide.apply(this.rawptr, args);
 	}
 }
+
+js.Box2d.b2WorldListener = function(rawptr) {
+	this.prototype = new konoha.Object();
+	this.rawptr = rawptr;
+	this.konohaclass = "js.box2d.b2WorldListener";
+
+//Public Properties
+	this.prototype.getB2_destroyBody = function() {
+		return this.rawptr.b2_destroyBody;
+	}
+	this.prototype.getB2_freezeBody = function() {
+		return this.rawptr.b2_freezeBody;
+	}
+//Public Methods
+	this.prototype.NotifyBoundaryViolated = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return NotifyBoundaryViolated.apply(this.rawptr, args);
+	}
+	this.prototype.NotifyJointDestroyed = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return NotifyJointDestroyed.apply(this.rawptr, args);
+	}
+}

@@ -488,3 +488,70 @@ js.box2d.B2RevoluteJointDef.prototype.setEnableMotor = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.enableMotor = args[0];
 }
+
+/* b2PrismaticJointDef */
+js.box2d.B2JointDef = function(rawptr) {
+	this.rawptr = rawptr;
+}
+js.box2d.B2PrismaticJointDef.prototype = new js.box2d.B2JointDef();
+js.box2d.B2PrismaticJointDef.prototype.konohaclass = "js.box2d.B2JointDef";
+js.box2d.B2PrismaticJointDef.prototype._new = function() {
+	this.rawptr = new b2PrismaticJointDef();
+	return this;
+}
+js.box2d.B2PrismaticJointDef.prototype.getAnchorPoint = function() {
+	return new js.box2d.B2Vec2(this.rawptr.anchorPoint);
+}
+js.box2d.B2PrismaticJointDef.prototype.setAnchorPoint = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.anchorPoint = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getAxis = function() {
+	return new js.box2d.B2Vec2(this.rawptr.axis);
+}
+js.box2d.B2PrismaticJointDef.prototype.setAnchorPoint = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.anchorPoint = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getLowerAngle = function() {
+	return this.rawptr.lowerAngle;
+}
+js.box2d.B2PrismaticJointDef.prototype.setLowerAngle = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.lowerAngle = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getUpperAngle = function() {
+	return this.rawptr.upperAngle;
+}
+js.box2d.B2PrismaticJointDef.prototype.setUpperAngle = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.upperAngle = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getMotorTorque = function() {
+	return this.rawptr.motorTorque;
+}
+js.box2d.B2PrismaticJointDef.prototype.setMotorTorque = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.motorTorque = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getMotorSpeed = function() {
+	return this.rawptr.motorSpeed;
+}
+js.box2d.B2PrismaticJointDef.prototype.setMotorSpeed = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.motorSpeed = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getEnableLimit = function() {
+	return this.rawptr.enableLimit;
+}
+js.box2d.B2PrismaticJointDef.prototype.setEnableLimit = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.enableLimit = args[0];
+}
+js.box2d.B2PrismaticJointDef.prototype.getEnableMotor = function() {
+	return this.rawptr.enableMotor;
+}
+js.box2d.B2PrismaticJointDef.prototype.setEnableMotor = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.enableMotor = args[0];
+}

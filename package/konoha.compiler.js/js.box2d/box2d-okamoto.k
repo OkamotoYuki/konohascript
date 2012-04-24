@@ -51,7 +51,7 @@ class B2JointDef {
 @Overrride B2JointDef B2JointDef.new();
 
 class B2RevoluteJointDef {
-//	anchorPoint;
+	B2Vec2 anchorPoint;
 	float lowerAngle;
 	float upperAngle;
 	float motorSpeed;
@@ -60,3 +60,15 @@ class B2RevoluteJointDef {
 	boolean enableMotor;
 }
 @Overrride B2RevoluteJointDef B2RevoluteJointDef.new();
+
+class B2PrismaticJointDef {
+	B2Vec2 anchorPoint;
+	B2Vec2 axis;
+	float lowerAngle;
+	float upperAngle;
+	float motorSpeed;
+	float motorTorqe;
+	boolean enableLimit;
+	boolean enableMotor;
+}
+@Overrride B2PrismaticJointDef B2PrismaticJointDef.new();

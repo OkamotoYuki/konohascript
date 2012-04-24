@@ -34,10 +34,10 @@ js.box2d.B2Vec2.prototype.set = function() {
 	this.rawptr.Set(args[0], args[1]);
 }
 js.box2d.B2Vec2.prototype.negative = function() {
-	return new this.rawptr.Negative();
+	return new js.box2d.B2Vec2(this.rawptr.Negative());
 }
 js.box2d.B2Vec2.prototype.copy = function() {
-	return new this.rawptr.Copy();
+	return new js.box2d.B2Vec2(this.rawptr.Copy());
 }
 js.box2d.B2Vec2.prototype.add = function() {
 	var args = verifyArgs(arguments);
@@ -89,7 +89,7 @@ js.box2d.B2Vec2.prototype.isValid = function() {
 }
 js.box2d.B2Vec2.prototype.make = function() {
 	var args = verifyArgs(arguments);
-	return this.rawptr.Make(args[0], args[1]);
+	return new js.box2d.B2Vec2(this.rawptr.Make(args[0], args[1]));
 }
 
 /* b2ShapeDef */
@@ -181,7 +181,7 @@ js.box2d.B2BoxDef.prototype._new = function() {
 	return this;
 }
 js.box2d.B2BoxDef.prototype.getExtents = function() {
-	return this.rawptr.extents;
+	return new js.box2d.B2Vec2(this.rawptr.extents);
 }
 js.box2d.B2BoxDef.prototype.setExtents = function() {
 	var args = verifyArgs(arguments);
@@ -396,17 +396,37 @@ js.box2d.B2JointDef.prototype._new = function() {
 js.box2d.B2JointDef.prototype.getType = function() {
 	return this.rawptr.type;
 }
+js.box2d.B2JointDef.prototype.setType = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.type = args[0];
+}
 //js.box2d.B2JointDef.prototype.getUserData = function() {
 //	return this.rawptr.userData;
 //}
-js.box2d.B2JointDef.prototype.getBody1 = function() {
-	return this.rawptr.body1;
-}
-js.box2d.B2JointDef.prototype.getBody2 = function() {
-	return this.rawptr.body2;
-}
+//js.box2d.B2JointDef.prototype.setUserData = function() {
+//	var args = verifyArgs(arguments);
+//	this.rawptr.userData = args[0];
+//}
+//js.box2d.B2JointDef.prototype.getBody1 = function() {
+//	return this.rawptr.body1;
+//}
+//js.box2d.B2JointDef.prototype.setBody1 = function() {
+//	var args = verifyArgs(arguments);
+//	this.rawptr.body1 = args[0];
+//}
+//js.box2d.B2JointDef.prototype.getBody2 = function() {
+//	return this.rawptr.body2;
+//}
+//js.box2d.B2JointDef.prototype.setBody2 = function() {
+//	var args = verifyArgs(arguments);
+//	this.rawptr.body2 = args[0];
+//}
 js.box2d.B2JointDef.prototype.getCollideConnected = function() {
 	return this.rawptr.collideConnected;
+}
+js.box2d.B2JointDef.prototype.setCollideConnected = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.collideConnected = args[0];
 }
 
 /* b2RevoluteJointDef */
@@ -420,23 +440,51 @@ js.box2d.B2RevoluteJointDef.prototype._new = function() {
 	return this;
 }
 js.box2d.B2RevoluteJointDef.prototype.getAnchorPoint = function() {
-	return this.rawptr.anchorPoint;
+	return new js.box2d.B2Vec2(this.rawptr.anchorPoint);
+}
+js.box2d.B2RevoluteJointDef.prototype.setAnchorPoint = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.anchorPoint = args[0];
 }
 js.box2d.B2RevoluteJointDef.prototype.getLowerAngle = function() {
 	return this.rawptr.lowerAngle;
 }
+js.box2d.B2RevoluteJointDef.prototype.setLowerAngle = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.lowerAngle = args[0];
+}
 js.box2d.B2RevoluteJointDef.prototype.getUpperAngle = function() {
 	return this.rawptr.upperAngle;
+}
+js.box2d.B2RevoluteJointDef.prototype.setUpperAngle = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.upperAngle = args[0];
 }
 js.box2d.B2RevoluteJointDef.prototype.getMotorTorque = function() {
 	return this.rawptr.motorTorque;
 }
+js.box2d.B2RevoluteJointDef.prototype.setMotorTorque = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.motorTorque = args[0];
+}
 js.box2d.B2RevoluteJointDef.prototype.getMotorSpeed = function() {
 	return this.rawptr.motorSpeed;
+}
+js.box2d.B2RevoluteJointDef.prototype.setMotorSpeed = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.motorSpeed = args[0];
 }
 js.box2d.B2RevoluteJointDef.prototype.getEnableLimit = function() {
 	return this.rawptr.enableLimit;
 }
+js.box2d.B2RevoluteJointDef.prototype.setEnableLimit = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.enableLimit = args[0];
+}
 js.box2d.B2RevoluteJointDef.prototype.getEnableMotor = function() {
 	return this.rawptr.enableMotor;
+}
+js.box2d.B2RevoluteJointDef.prototype.setEnableMotor = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.enableMotor = args[0];
 }

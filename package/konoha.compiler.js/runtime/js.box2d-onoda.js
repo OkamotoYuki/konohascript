@@ -642,3 +642,19 @@ js.Box2d.b2Contact = function(rawptr) {
 		return InitializeRegisters.apply(this.rawptr, args);
 	}
 }
+
+js.Box2d.b2CollisionFilter = function(rawptr) {
+	this.prototype = new konoha.Object();
+	this.rawptr = rawptr;
+	this.konohaclass = "js.box2d.b2CollisionFilter";
+
+//Public Properties
+	this.prototype.getB2_defaultFilter = function() {
+		return new js.Box2d.b2CollisionFilter(this.rawptr.b2_defaultFilter);
+	}
+//Public Methods
+	this.prototype.ShouldCollide = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return ShouldCollide.apply(this.rawptr, args);
+	}
+}

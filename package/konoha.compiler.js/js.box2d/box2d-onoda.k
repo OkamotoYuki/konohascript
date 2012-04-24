@@ -144,3 +144,8 @@ class b2Contact {
 	void InitializeRegisters();
 }
 b2Contact b2Contact.new(b2Shape s1 = null, b2Shape s2 = null);
+
+class b2CollisionFilter {
+	b2CollisionFilter b2_defaultFilter;
+	boolean ShouldCollide(b2Shape shape1, b2Shape shape2);
+}

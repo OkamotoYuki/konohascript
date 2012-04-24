@@ -205,204 +205,320 @@ js.Box2d.b2Body = function(rawptr) {
 	this.konohaclass = "js.box2d.b2Body";
 	this.prototype = new konoha.Object();
 //Public Properties
-	this.getE_allowSleepFlag = function() {
+	this.prototype.getE_allowSleepFlag = function() {
 		return this.rawptr.e_allowSleepFlag;
 	}
-	this.getE_destroyFlag = function() {
+	this.prototype.getE_destroyFlag = function() {
 		return this.rawptr.e_destroyFlag;
 	}
-	this.getE_frozenFlag = function() {
+	this.prototype.getE_frozenFlag = function() {
 		return this.rawptr.e_frozenFlag;
 	}
-	this.getE_islanFlag = function() {
+	this.prototype.getE_islanFlag = function() {
 		return this.rawptr.e_islangFlag;
 	}
-	this.getE_sleepFlag = function() {
+	this.prototype.getE_sleepFlag = function() {
 		return this.rawptr.e_sleepFlag;
 	}
-	this.getE_staticFlag = function() {
+	this.prototype.getE_staticFlag = function() {
 		return this.rawptr.e_staticFlag;
 	}
-	this.getM_angularDamping = function() {
+	this.prototype.getM_angularDamping = function() {
 		return this.rawptr.angularDamping;
 	}
-	this.setM_angularDamping = function(arg) {
+	this.prototype.setM_angularDamping = function(arg) {
 		this.rawptr.angularDamping = arg;
 	}
-	this.getM_angularVetocity = function() {
+	this.prototype.getM_angularVetocity = function() {
 		return this.rawptr.angularVelocity;
 	}
-	this.setM_angularVetocity = function(arg) {
+	this.prototype.setM_angularVetocity = function(arg) {
 		this.rawptr.angularVelocity = arg;
 	}
-	this.getM_center = function() {
+	this.prototype.getM_center = function() {
 		return new js.Box2d.b2Vec2(this.rawptr.m_center);
 	}
-	this.setM_center = function(arg) {
+	this.prototype.setM_center = function(arg) {
 		this.rawptr.m_center = arg.rawptr;
 	}
-	this.getM_contactList = function() {
+	this.prototype.getM_contactList = function() {
 		return new js.Box2d.b2ContactNode(this.rawptr.m_contactList);
 	}
-	this.setM_contactList = function(arg) {
+	this.prototype.setM_contactList = function(arg) {
 		this.rawptr.m_contactList = arg.rawptr;
 	}
-	this.getM_flag = function() {
+	this.prototype.getM_flag = function() {
 		return this.rawptr.m_flag;
 	}
-	this.setM_flag = function(arg) {
+	this.prototype.setM_flag = function(arg) {
 		this.rawptr.m_flag = arg;
 	}
-	this.getM_force = function() {
+	this.prototype.getM_force = function() {
 		return new b2Vec2(this.rawptr.m_force);
 	}
-	this.setM_force = function(arg) {
+	this.prototype.setM_force = function(arg) {
 		this.rawptr.m_force = arg.rawptr;
 	}
-	this.getM_I = function() {
+	this.prototype.getM_I = function() {
 		return this.rawptr.m_I;
 	}
-	this.set = function(arg) {
+	this.prototype.set = function(arg) {
 		this.rawptr.m_I = arg;
 	}
-	this.getM_invI = function() {
+	this.prototype.getM_invI = function() {
 		return this.rawptr.invI;
 	}
-	this.setM_invI = function(arg) {
+	this.prototype.setM_invI = function(arg) {
 		this.rawptr.m_invI = arg;
 	}
-	this.getM_invMass = function() {
+	this.prototype.getM_invMass = function() {
 		return this.rawptr.m_invMass;
 	}
-	this.setM_invMass = function(arg) {
+	this.prototype.setM_invMass = function(arg) {
 		this.rawptr.m_invMass = arg;
 	}
-	this.getM_jointList = function() {
+	this.prototype.getM_jointList = function() {
 		return new js.Box2d.b2JointNode(this.rawptr.m_jointList);
 	}
-	this.setM_jointList = function(arg) {
+	this.prototype.setM_jointList = function(arg) {
 		this.rawptr.m_jointList = arg.rawptr;
 	}
-	this.getM_linearDamping = function() {
+	this.prototype.getM_linearDamping = function() {
 		return this.rawptr.linearDamping;
 	}
-	this.setM_linearDamping = function(arg) {
+	this.prototype.setM_linearDamping = function(arg) {
 		this.rawptr.linearDamping = arg;
 	}
-	this.getM_linearVelocity = function() {
+	this.prototype.getM_linearVelocity = function() {
 		return new js.Box2d.b2Vec2(this.rawptr.m_linearVelocity);
 	}
-	this.setM_linearVelocity = function(arg) {
+	this.prototype.setM_linearVelocity = function(arg) {
 		this.rawptr.linearVelocity = arg.rawptr;
 	}
-	this.getM_mass = function() {
+	this.prototype.getM_mass = function() {
 		return this.rawptr.m_mass;
 	}
-	this.setM_mass = function(arg) {
+	this.prototype.setM_mass = function(arg) {
 		this.rawptr.m_mass = arg;
 	}
-	this.getM_next = function() {
+	this.prototype.getM_next = function() {
 		return new b2Body(this.rawptr.m_next);
 	}
-	this.setM_next = function(arg) {
+	this.prototype.setM_next = function(arg) {
 		this.rawptr.m_next = arg.rawptr;
 	}
-	this.getM_position = function() {
+	this.prototype.getM_position = function() {
 		return new b2Vec2(this.rawptr.position);
 	}
-	this.setM_position = function(arg) {
+	this.prototype.setM_position = function(arg) {
 		this.rawptr.m_position = arg.rawptr;
 	}
-	this.getM_position0 = function() {
+	this.prototype.getM_position0 = function() {
 		return new b2Vec2(this.rawptr.position0);
 	}
-	this.setM_position0 = function(arg) {
+	this.prototype.setM_position0 = function(arg) {
 		this.rawptr.m_position = arg.rawptr;
 	}
-	this.getM_prev = function() {
+	this.prototype.getM_prev = function() {
 		return new b2Body(this.rawptr.m_prev);
 	}
-	this.setM_prev = function(arg) {
+	this.prototype.setM_prev = function(arg) {
 		this.rawptr.m_prev = arg.rawptr;
 	}
-	this.getM_R = function() {
+	this.prototype.getM_R = function() {
 		return new b2Mat22(this.rawptr.m_R);
 	}
-	this.setM_R = function(arg) {
+	this.prototype.setM_R = function(arg) {
 		this.rawptr.m_R = arg.rawptr;
 	}
-	this.getM_rotation = function() {
+	this.prototype.getM_rotation = function() {
 		return this.rawptr.m_rotation;
 	}
-	this.setM_rotation = function(arg) {
+	this.prototype.setM_rotation = function(arg) {
 		this.rawptr.m_rotation = arg;
 	}
-	this.getM_rotation0 = function() {
+	this.prototype.getM_rotation0 = function() {
 		return this.rawptr.m_rotation0;
 	}
-	this.setM_rotation0 = function(arg) {
+	this.prototype.setM_rotation0 = function(arg) {
 		this.rawptr.m_rotation0 = arg;
 	}
-	this.getM_shapeCount = function() {
+	this.prototype.getM_shapeCount = function() {
 		return this.rawptr.m_shapeCount;
 	}
-	this.setM_shapeCount = function(arg) {
+	this.prototype.setM_shapeCount = function(arg) {
 		this.rawptr.m_shapeCount = arg;
 	}
-	this.getM_shapeList = function() {
+	this.prototype.getM_shapeList = function() {
 		return new js.Box2d.b2Shape(this.rawptr.m_shapeList);
 	}
-	this.setM_shapeList = function(arg) {
+	this.prototype.setM_shapeList = function(arg) {
 		this.rawptr.m_shapeList = arg.rawptr;
 	}
-	this.getM_sleepTime = function() {
+	this.prototype.getM_sleepTime = function() {
 		return this.rawptr.m_sleepTime;
 	}
-	this.setM_sleepTime = function(arg) {
+	this.prototype.setM_sleepTime = function(arg) {
 		this.rawptr.m_sleepTime = arg;
 	}
-	this.getM_torque = function() {
+	this.prototype.getM_torque = function() {
 		return this.rawptr.m_torque;
 	}
-	this.setM_torque = function(arg) {
+	this.prototype.setM_torque = function(arg) {
 		this.rawptr.m_torque = arg;
 	}
-	this.getM_userData = function() {
+	this.prototype.getM_userData = function() {
 		return this.rawptr.m_userData;
 	}
-	this.setM_userData = function(arg) {
+	this.prototype.setM_userData = function(arg) {
 		this.rawptr.m_userData = arg;
 	}
-	this.getM_world = function() {
+	this.prototype.getM_world = function() {
 		return new js.Box2d.b2World(this.rawptr.m_world);
 	}
-	this.setM_world = function(arg) {
+	this.prototype.setM_world = function(arg) {
 		this.rawptr.m_world = arg.rawptr;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Public Functions
+	this.prototype.AllowSleeping = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return AllowSleeping.apply(this.rawptr, args);
+	}
+	this.prototype.ApplyForce = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return ApplyForce.apply(this.rawptr, args);
+	}
+	this.prototype.ApplyImpulse = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return ApplyImpulse.apply(this.rawptr, args);
+	}
+	this.prototype.ApplyTorque = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return ApplyTorque.apply(this.rawptr, args);
+	}
+	this.prototype.Destroy = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return Destroy.apply(this.rawptr, args);
+	}
+	this.prototype.Freeze = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return Freeze.apply(this.rawptr, args);
+	}
+	this.prototype.GetAngularVelocity = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return GetAngularVelocity.apply(this.rawptr, args);
+	}
+	this.prototype.GetCenterPosition = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetCenterPosition.apply(this.rawptr, args));
+	}
+	this.prototype.GetContactList = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2ContactNode(GetContactList.apply(this.rawptr, args));
+	}
+	this.prototype.GetInertia = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetInertia.apply(this.rawptr, args));
+	}
+	this.prototype.GetJointList = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2JointNode(GetJointList.apply(this.rawptr, args));
+	}
+	this.prototype.GetLinearVelocity = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetLinearVelocity.apply(this.rawptr, args));
+	}
+	this.prototype.GetLocalPoint = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetLocalPoint.apply(this.rawptr, args));
+	}
+	this.prototype.GetLocalVector = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetLocalVector.apply(this.rawptr, args));
+	}
+	this.prototype.GetMass = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return GetMass.apply(this.rawptr, args);
+	}
+	this.prototype.GetNext = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Body(GetNext.apply(this.rawptr, args));
+	}
+	this.prototype.GetOriginPosition = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetOriginPosition.apply(this.rawptr, args));
+	}
+	this.prototype.GetRotation = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return GetRotation.apply(this.rawptr, args);
+	}
+	this.prototype.GetRotationMatrix = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Mat22(GetRotationMatrix.apply(this.rawptr, args));
+	}
+	this.prototype.GetShapeList = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Shape(GetShapeList.apply(this.rawptr, args));
+	}
+	this.prototype.GetUserData = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return GetUserData.apply(this.rawptr, args);
+	}
+	this.prototype.GetWorldPoint = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetWorldPoint.apply(this.rawptr, args));
+	}
+	this.prototype.GetWorldVector = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return new js.Box2d.b2Vec2(GetWorldVector.apply(this.rawptr, args));
+	}
+	this.prototype.IsConnected = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return IsConnected.apply(this.rawptr, args);
+	}
+	this.prototype.IsFrozen = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return IsFrozen.apply(this.rawptr, args);
+	}
+	this.prototype.IsSleeping = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return IsSleeping.apply(this.rawptr, args);
+	}
+	this.prototype.IsStatic = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return IsStatic.apply(this.rawptr, args);
+	}
+	this.prototype.QuickSyncShapes = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return QuickSyncShapes.apply(this.rawptr, args);
+	}
+	this.prototype.SetAngularVelocity = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetAngularVelocity.apply(this.rawptr, args);
+	}
+	this.prototype.SetCenterPosition = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetCenterPosition.apply(this.rawptr, args);
+	}
+	this.prototype.SetLinearVelocity = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetLinearVelocity.apply(this.rawptr, args);
+	}
+	this.prototype.SetOriginPosition = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SetOriginPosition.apply(this.rawptr, args);
+	}
+	this.prototype.SynchronizeShapes = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return SynchronizeShapes.apply(this.rawptr, args);
+	}
+	this.prototype.WakeUp = function() {
+		var args = verifyArgs(Array.prototype.slice.call(arguments));
+		return WakeUp.apply(this.rawptr, args);
+	}
+	this.prototype._new = function() {
+		this.rawptr = new b2Body(arguments[0], arguments[1]);
+		return this;
+	}
 }
-
-
-	// this.prototype = function() {
-	// 	var args = verifyArgs(Array.prototype.slice.call(arguments));
-	// 	return .apply(this.rawptr, args);
-	// }
-
-

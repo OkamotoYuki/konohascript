@@ -46,7 +46,7 @@ class B2JointDef {
 	int type;
 //	body1;
 //	body2;
-//  collideConnected;
+	boolean collideConnected;
 }
 @Overrride B2JointDef B2JointDef.new();
 
@@ -56,7 +56,7 @@ class B2RevoluteJointDef {
 	float upperAngle;
 	float motorSpeed;
 	float motorTorqe;
-// enableLimit;
+	boolean enableLimit;
 	boolean enableMotor;
 }
 @Overrride B2RevoluteJointDef B2RevoluteJointDef.new();

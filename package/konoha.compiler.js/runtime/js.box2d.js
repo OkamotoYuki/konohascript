@@ -555,3 +555,28 @@ js.box2d.B2PrismaticJointDef.prototype.setEnableMotor = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.enableMotor = args[0];
 }
+
+/* b2AABB */
+js.box2d.B2AABB = function(rawptr) {
+	this.rawptr = rawptr;
+}
+js.box2d.B2AABB.prototype = new konoha.Object();
+js.box2d.B2AABB.prototype.konohaclass = "js.box2d.B2JointDef";
+js.box2d.B2AABB.prototype._new = function() {
+	this.rawptr = new b2AABB();
+	return this;
+}
+js.box2d.B2AABB.prototype.getMinVertex = function() {
+	return new js.box2d.B2Vec2(this.rawptr.minVertex);
+}
+js.box2d.B2AABB.prototype.setMinVertex = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.minVertex = args[0];
+}
+js.box2d.B2AABB.prototype.getMaxVertex = function() {
+	return new js.box2d.B2Vec2(this.rawptr.maxVertex);
+}
+js.box2d.B2AABB.prototype.setMaxVertex = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.maxVertex = args[0];
+}

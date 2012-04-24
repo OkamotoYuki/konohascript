@@ -117,3 +117,10 @@ class B2PrismaticJointDef {
 	boolean enableMotor;
 }
 @Overrride B2PrismaticJointDef B2PrismaticJointDef.new();
+
+class B2AABB {
+//	isValid();
+	B2Vec2 minVertex;
+	B2Vec2 maxVertex;
+}
+B2AABB B2AABB.new();

@@ -27,11 +27,11 @@ js.box2d.B2Vec2.prototype.getY() function() {
 	return this.rawptr.y;
 }
 js.box2d.B2Vec2.prototype.setZero = function() {
-	this.rawptr.SetZero();
+	this.rawptr.setZero();
 }
 js.box2d.B2Vec2.prototype.set = function() {
 	var args = verifyArgs(arguments);
-	this.rawptr.Set(args[0], args[1]);
+	this.rawptr.set(args[0], args[1]);
 }
 js.box2d.B2Vec2.prototype.negative = function() {
 	return new js.box2d.B2Vec2(this.rawptr.Negative());

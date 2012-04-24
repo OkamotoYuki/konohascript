@@ -1,8 +1,8 @@
 class B2Vec2 {
 	float x;
 	float y;
-	void SetZero();
-	void Set(float x, float y);
+	void setZero();
+	void set(float x, float y);
 	B2Vec2 negative();
 	B2Vec2 copy();
 	void add(B2Vec2 v);

@@ -182,7 +182,7 @@ js.box2d.b2Mat22 = function(rawptr) {
 	}
 }
 
-js.Box2d.PolyDef = function(rawptr) {
+js.Box2d.b2PolyDef = function(rawptr) {
 	this.rawptr = rawptr;
 	this.konohaclass = "js.box2d.b2PolyDef";
 	this.prototype = new konoha.Object();
@@ -200,7 +200,204 @@ js.Box2d.PolyDef = function(rawptr) {
 	}
 }
 
+js.Box2d.b2Body = function(rawptr) {
+	this.rawptr = rawptr;
+	this.konohaclass = "js.box2d.b2Body";
+	this.prototype = new konoha.Object();
+//Public Properties
+	this.getE_allowSleepFlag = function() {
+		return this.rawptr.e_allowSleepFlag;
+	}
+	this.getE_destroyFlag = function() {
+		return this.rawptr.e_destroyFlag;
+	}
+	this.getE_frozenFlag = function() {
+		return this.rawptr.e_frozenFlag;
+	}
+	this.getE_islanFlag = function() {
+		return this.rawptr.e_islangFlag;
+	}
+	this.getE_sleepFlag = function() {
+		return this.rawptr.e_sleepFlag;
+	}
+	this.getE_staticFlag = function() {
+		return this.rawptr.e_staticFlag;
+	}
+	this.getM_angularDamping = function() {
+		return this.rawptr.angularDamping;
+	}
+	this.setM_angularDamping = function(arg) {
+		this.rawptr.angularDamping = arg;
+	}
+	this.getM_angularVetocity = function() {
+		return this.rawptr.angularVelocity;
+	}
+	this.setM_angularVetocity = function(arg) {
+		this.rawptr.angularVelocity = arg;
+	}
+	this.getM_center = function() {
+		return new js.Box2d.b2Vec2(this.rawptr.m_center);
+	}
+	this.setM_center = function(arg) {
+		this.rawptr.m_center = arg.rawptr;
+	}
+	this.getM_contactList = function() {
+		return new js.Box2d.b2ContactNode(this.rawptr.m_contactList);
+	}
+	this.setM_contactList = function(arg) {
+		this.rawptr.m_contactList = arg.rawptr;
+	}
+	this.getM_flag = function() {
+		return this.rawptr.m_flag;
+	}
+	this.setM_flag = function(arg) {
+		this.rawptr.m_flag = arg;
+	}
+	this.getM_force = function() {
+		return new b2Vec2(this.rawptr.m_force);
+	}
+	this.setM_force = function(arg) {
+		this.rawptr.m_force = arg.rawptr;
+	}
+	this.getM_I = function() {
+		return this.rawptr.m_I;
+	}
+	this.set = function(arg) {
+		this.rawptr.m_I = arg;
+	}
+	this.getM_invI = function() {
+		return this.rawptr.invI;
+	}
+	this.setM_invI = function(arg) {
+		this.rawptr.m_invI = arg;
+	}
+	this.getM_invMass = function() {
+		return this.rawptr.m_invMass;
+	}
+	this.setM_invMass = function(arg) {
+		this.rawptr.m_invMass = arg;
+	}
+	this.getM_jointList = function() {
+		return new js.Box2d.b2JointNode(this.rawptr.m_jointList);
+	}
+	this.setM_jointList = function(arg) {
+		this.rawptr.m_jointList = arg.rawptr;
+	}
+	this.getM_linearDamping = function() {
+		return this.rawptr.linearDamping;
+	}
+	this.setM_linearDamping = function(arg) {
+		this.rawptr.linearDamping = arg;
+	}
+	this.getM_linearVelocity = function() {
+		return new js.Box2d.b2Vec2(this.rawptr.m_linearVelocity);
+	}
+	this.setM_linearVelocity = function(arg) {
+		this.rawptr.linearVelocity = arg.rawptr;
+	}
+	this.getM_mass = function() {
+		return this.rawptr.m_mass;
+	}
+	this.setM_mass = function(arg) {
+		this.rawptr.m_mass = arg;
+	}
+	this.getM_next = function() {
+		return new b2Body(this.rawptr.m_next);
+	}
+	this.setM_next = function(arg) {
+		this.rawptr.m_next = arg.rawptr;
+	}
+	this.getM_position = function() {
+		return new b2Vec2(this.rawptr.position);
+	}
+	this.setM_position = function(arg) {
+		this.rawptr.m_position = arg.rawptr;
+	}
+	this.getM_position0 = function() {
+		return new b2Vec2(this.rawptr.position0);
+	}
+	this.setM_position0 = function(arg) {
+		this.rawptr.m_position = arg.rawptr;
+	}
+	this.getM_prev = function() {
+		return new b2Body(this.rawptr.m_prev);
+	}
+	this.setM_prev = function(arg) {
+		this.rawptr.m_prev = arg.rawptr;
+	}
+	this.getM_R = function() {
+		return new b2Mat22(this.rawptr.m_R);
+	}
+	this.setM_R = function(arg) {
+		this.rawptr.m_R = arg.rawptr;
+	}
+	this.getM_rotation = function() {
+		return this.rawptr.m_rotation;
+	}
+	this.setM_rotation = function(arg) {
+		this.rawptr.m_rotation = arg;
+	}
+	this.getM_rotation0 = function() {
+		return this.rawptr.m_rotation0;
+	}
+	this.setM_rotation0 = function(arg) {
+		this.rawptr.m_rotation0 = arg;
+	}
+	this.getM_shapeCount = function() {
+		return this.rawptr.m_shapeCount;
+	}
+	this.setM_shapeCount = function(arg) {
+		this.rawptr.m_shapeCount = arg;
+	}
+	this.getM_shapeList = function() {
+		return new js.Box2d.b2Shape(this.rawptr.m_shapeList);
+	}
+	this.setM_shapeList = function(arg) {
+		this.rawptr.m_shapeList = arg.rawptr;
+	}
+	this.getM_sleepTime = function() {
+		return this.rawptr.m_sleepTime;
+	}
+	this.setM_sleepTime = function(arg) {
+		this.rawptr.m_sleepTime = arg;
+	}
+	this.getM_torque = function() {
+		return this.rawptr.m_torque;
+	}
+	this.setM_torque = function(arg) {
+		this.rawptr.m_torque = arg;
+	}
+	this.getM_userData = function() {
+		return this.rawptr.m_userData;
+	}
+	this.setM_userData = function(arg) {
+		this.rawptr.m_userData = arg;
+	}
+	this.getM_world = function() {
+		return new js.Box2d.b2World(this.rawptr.m_world);
+	}
+	this.setM_world = function(arg) {
+		this.rawptr.m_world = arg.rawptr;
+	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Public Functions
+}
 
 
 	// this.prototype = function() {

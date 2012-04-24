@@ -8,7 +8,7 @@ class B2Vec2 {
 	B2Vec2 copy();
 	void add(B2Vec2 v);
 	void subtract(B2Vec2 v);
-	void multiply();
+	void multiply(float a);
 	void mulM(B2Mat22 m);
 	void mulTM(B2Mat22 m);
 	void crossVF(float s);
@@ -81,3 +81,22 @@ class B2AABB {
 	boolean isValid();
 }
 B2AABB B2AABB.new();
+
+class B2World {
+	int m_bodyCount;
+	B2Body m_bodyDestroyList;
+	B2Body m_bodyList;
+	B2BroadPhase m_broadPhase;
+	int contactCount;
+	B2Contact m_contactList;
+	B2ContactManager m_contactManager;
+	B2CollisionFilter;
+	B2Vec2 m_gragity;
+	B2Body m_groundBody;
+	int m_jointCount;
+	B2Joint m_jointList;
+	B2WorldListener m_listener;
+//	m_stackAllocator;
+	int s_enablePositionCorrection;
+	int s_enableWarmStarting;
+}

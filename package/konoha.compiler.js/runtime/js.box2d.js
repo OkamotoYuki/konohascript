@@ -400,27 +400,27 @@ js.box2d.B2JointDef.prototype.setType = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.type = args[0];
 }
-//js.box2d.B2JointDef.prototype.getUserData = function() {
-//	return this.rawptr.userData;
-//}
-//js.box2d.B2JointDef.prototype.setUserData = function() {
-//	var args = verifyArgs(arguments);
-//	this.rawptr.userData = args[0];
-//}
-//js.box2d.B2JointDef.prototype.getBody1 = function() {
-//	return this.rawptr.body1;
-//}
-//js.box2d.B2JointDef.prototype.setBody1 = function() {
-//	var args = verifyArgs(arguments);
-//	this.rawptr.body1 = args[0];
-//}
-//js.box2d.B2JointDef.prototype.getBody2 = function() {
-//	return this.rawptr.body2;
-//}
-//js.box2d.B2JointDef.prototype.setBody2 = function() {
-//	var args = verifyArgs(arguments);
-//	this.rawptr.body2 = args[0];
-//}
+js.box2d.B2JointDef.prototype.getUserData = function() {
+	return this.rawptr.userData;
+}
+js.box2d.B2JointDef.prototype.setUserData = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.userData = args[0];
+}
+js.box2d.B2JointDef.prototype.getBody1 = function() {
+	return this.rawptr.body1;
+}
+js.box2d.B2JointDef.prototype.setBody1 = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.body1 = args[0];
+}
+js.box2d.B2JointDef.prototype.getBody2 = function() {
+	return this.rawptr.body2;
+}
+js.box2d.B2JointDef.prototype.setBody2 = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.body2 = args[0];
+}
 js.box2d.B2JointDef.prototype.getCollideConnected = function() {
 	return this.rawptr.collideConnected;
 }

@@ -79,8 +79,6 @@ class b2Body {
 	dynamic m_userData;
 	b2World m_world;
 
- 	
-//b2Body(bd:b2BodyDef, world:b2World)
 	void AllowSleeping(boolean flag);
 	void ApplyForce(b2Vec2 force, b2Vec2 point);
 	void ApplyImpulse(b2Vec2 impulse, b2Vec2 point);
@@ -116,3 +114,33 @@ class b2Body {
 	void SynchronizeShapes();
 	void WakeUp();
 }
+b2Body b2Body.new(b2BodyDef bd, b2World world);
+
+class b2Contact {
+	int e_destroyFlag = 0x0002;
+	int e_islandFlag = 0x0001;
+	int m_flags;
+	int m_friction;
+	int m_manifoldCount;
+	b2Contact m_next;
+	b2ContactNode m_node1;
+	b2ContactNode m_node2;
+	b2Contact m_prev;
+	int m_restitution;
+	b2Shape m_shape1;
+	b2Shape m_shape2;
+	boolean s_initialized = false;
+//	Array<> s_registers;
+
+	void AddType(dynamic createFcn, dynamic destroyFcn, int type1, int type2);
+	b2Contact Create(b2Shape shape1, b2Shape shape2, dynamic allocator);
+	void Destroy(cb2Contact contact, dynamic allocator);
+	void Evaluate();
+	int GetManifoldCount();
+//	Array<> GetManifolds();
+	b2Contact GetNext();
+	b2Shape GetShape1();
+	b2Shape GetShape2();
+	void InitializeRegisters();
+}
+b2Contact b2Contact.new(b2Shape s1 = null, b2Shape s2 = null);

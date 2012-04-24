@@ -1062,3 +1062,310 @@ js.box2d.B2AABB.prototype.setMaxVertex = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.maxVertex = args[0];
 }
+
+/* b2World */
+js.box2d.B2World = function(rawptr) {
+	this.rawptr = rawptr
+}
+js.box2d.B2World.prototype = new konoha.Object();
+js.box2d.B2World.prototype.konohaclass = "js.box2d.B2World";
+js.box2d.B2World.prototype.getM_bodyCount = function() {
+	return this.rawptr.m_bodyCount;
+}
+js.box2d.B2World.prototype.setM_bodyCount = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_bodyCount = args[0];
+};
+js.box2d.B2World.prototype.getM_bodyDestroyList = function() {
+	return new js.box2d.B2Body(this.rawptr.m_bodyDestroyList);
+}
+js.box2d.B2World.prototype.setM_bodyDestroyList = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_bodyDestroyList = args[0];
+};
+js.box2d.B2World.prototype.getM_bodyList = function() {
+	return new js.box2d.B2Body(this.rawptr.m_bodyList);
+}
+js.box2d.B2World.prototype.setM_bodyList = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_bodyList = args[0];
+};
+js.box2d.B2World.prototype.getM_broadPhase = function() {
+	return new js.box2d.B2BroadPhase(this.rawptr.m_broadPhase);
+}
+js.box2d.B2World.prototype.setM_broadPhase = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_broadPhase = args[0];
+};
+js.box2d.B2World.prototype.getContactCount = function() {
+	return this.rawptr.contactCount;
+}
+js.box2d.B2World.prototype.setContactCount = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.contactCount = args[0];
+};
+js.box2d.B2World.prototype.getM_contactList = function() {
+	return new js.box2d.B2Contact(this.rawptr.m_contactList);
+}
+js.box2d.B2World.prototype.setM_contactList = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_contactList = args[0];
+};
+js.box2d.B2World.prototype.getM_contactManager = function() {
+	return new js.box2d.B2ContactManager(this.rawptr.m_contactManager);
+}
+js.box2d.B2World.prototype.setM_contactManager = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_contactManager = args[0];
+};
+js.box2d.B2World.prototype.getM_filter = function() {
+	return new js.box2d.B2CollisionFilter(this.rawptr.m_filter);
+}
+js.box2d.B2World.prototype.setM_filter = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_filter = args[0];
+};
+js.box2d.B2World.prototype.getM_gragity = function() {
+	return new js.box2d.B2Vec2(this.rawptr.m_gragity);
+}
+js.box2d.B2World.prototype.setM_gragity = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_gragity = args[0];
+};
+js.box2d.B2World.prototype.getM_groundBody = function() {
+	return new js.box2d.B2Body(this.rawptr.m_groundBody);
+}
+js.box2d.B2World.prototype.setM_groundBody = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_groundBody = args[0];
+};
+js.box2d.B2World.prototype.getM_jointCount = function() {
+	return this.rawptr.m_jointCount;
+}
+js.box2d.B2World.prototype.setM_jointCount = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_jointCount = args[0];
+};
+js.box2d.B2World.prototype.getM_jointList = function() {
+	return new js.box2d.B2Joint(this.rawptr.m_jointList);
+}
+js.box2d.B2World.prototype.setM_jointList = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_jointList = args[0];
+};
+js.box2d.B2World.prototype.getM_listener = function() {
+	return new js.box2d.B2WorldListener(this.rawptr.m_listener);
+}
+js.box2d.B2World.prototype.setM_listener = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_listener = args[0];
+};
+js.box2d.B2World.prototype.getS_enablePositionCorrection = function() {
+	return this.rawptr.s_enablePositionCorrection;
+}
+js.box2d.B2World.prototype.setS_enablePositionCorrection = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.s_enablePositionCorrection = args[0];
+};
+js.box2d.B2World.prototype.getS_enableWarmStarting = function() {
+	return this.rawptr.s_enableWarmStarting;
+}
+js.box2d.B2World.prototype.setS_enableWarmStarting = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.s_enableWarmStarting = args[0];
+};
+js.box2d.B2World.prototype.cleanBodyList = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.CleanBodyList(args[0]);
+}
+js.box2d.B2World.prototype.createBody = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Body(this.rawptr.CreateBody(args[0]));
+}
+js.box2d.B2World.prototype.createJoint = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Joint(this.rawptr.CreateJoint(args[0]));
+}
+js.box2d.B2World.prototype.destroyBody = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.DestroyBody(args[0]);
+}
+js.box2d.B2World.prototype.destroyJoint = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.DestroyJoint(args[0]);
+}
+js.box2d.B2World.prototype.getBodyList = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Body(this.rawptr.GetBodyList(args[0]));
+}
+js.box2d.B2World.prototype.getContactList = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Contact(this.rawptr.GetContactList(args[0]));
+}
+js.box2d.B2World.prototype.getGroundBody = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Body(this.rawptr.GetGroundBody(args[0]));
+}
+js.box2d.B2World.prototype.getJointList = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Joint(this.rawptr.GetJointList(args[0]));
+}
+js.box2d.B2World.prototype.setFilter = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.SetFilter(args[0]);
+}
+js.box2d.B2World.prototype.setListener = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.SetListener(args[0]);
+}
+
+/* b2Joint */
+js.box2d.B2Joint = function(rawptr) {
+	this.rawptr = rawptr
+}
+js.box2d.B2Joint.prototype = new konoha.Object();
+js.box2d.B2Joint.prototype.konohaclass = "js.box2d.B2Joint";
+js.box2d.B2Joint.prototype.getM_body1 = function() {
+	return new js.box2d.B2Body(this.rawptr.m_body1);
+}
+js.box2d.B2Joint.prototype.setM_body1 = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_body1 = args[0];
+};
+js.box2d.B2Joint.prototype.getM_body2 = function() {
+	return new js.box2d.B2Body(this.rawptr.m_body2);
+}
+js.box2d.B2Joint.prototype.setM_body2 = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_body2 = args[0];
+};
+js.box2d.B2Joint.prototype.getM_collideConnected = function() {
+	return this.rawptr.m_collideConnected;
+}
+js.box2d.B2Joint.prototype.setM_collideConnected = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_collideConnected = args[0];
+};
+js.box2d.B2Joint.prototype.getM_islandFlag = function() {
+	return this.rawptr.m_islandFlag;
+}
+js.box2d.B2Joint.prototype.setM_islandFlag = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_islandFlag = args[0];
+};
+js.box2d.B2Joint.prototype.getM_next = function() {
+	return new js.box2d.B2Joint(this.rawptr.m_next);
+}
+js.box2d.B2Joint.prototype.setM_next = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_next = args[0];
+};
+js.box2d.B2Joint.prototype.getM_node1 = function() {
+	return new js.box2d.B2JointNode(this.rawptr.m_node1);
+}
+js.box2d.B2Joint.prototype.setM_node1 = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_node1 = args[0];
+};
+js.box2d.B2Joint.prototype.getM_node2 = function() {
+	return new js.box2d.B2JointNode(this.rawptr.m_node2);
+}
+js.box2d.B2Joint.prototype.setM_node2 = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_node2 = args[0];
+};
+js.box2d.B2Joint.prototype.getM_prev = function() {
+	return new js.box2d.B2Joint(this.rawptr.m_prev);
+}
+js.box2d.B2Joint.prototype.setM_prev = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_prev = args[0];
+};
+js.box2d.B2Joint.prototype.getM_type = function() {
+	return this.rawptr.m_type;
+}
+js.box2d.B2Joint.prototype.setM_type = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.m_type = args[0];
+};
+js.box2d.B2Joint.prototype.create = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Joint(this.rawptr.Create(args[0]));
+}
+js.box2d.B2Joint.prototype.destroy = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.Destroy(args[0]);
+}
+js.box2d.B2Joint.prototype.getAnchor1 = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Vec2(this.rawptr.GetAnchor1(args[0]));
+}
+js.box2d.B2Joint.prototype.getAnchor2 = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Vec2(this.rawptr.GetAnchor2(args[0]));
+}
+js.box2d.B2Joint.prototype.getBody1 = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Body(this.rawptr.GetBody1(args[0]));
+}
+js.box2d.B2Joint.prototype.getBody2 = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Body(this.rawptr.GetBody2(args[0]));
+}
+js.box2d.B2Joint.prototype.getNext = function() {
+	var args = verifyArgs(arguments);
+	return new js.box2d.B2Joint(this.rawptr.GetNext(args[0]));
+}
+js.box2d.B2Joint.prototype.GetType = function() {
+	var args = verifyArgs(arguments);
+	return this.rawptr.GetType(args[0]);
+}
+js.box2d.B2Joint.prototype.preparePositionSolver = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.PreparePositionSolver(args[0]);
+}
+js.box2d.B2Joint.prototype.prepareVelocitySolver = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.PrepareVelocitySolver(args[0]);
+}
+js.box2d.B2Joint.prototype.solvePositionConstraints = function() {
+	var args = verifyArgs(arguments);
+	return this.rawptr.SolvePositionConstraints(args[0]);
+}
+js.box2d.B2Joint.prototype.solveVelocityConstraints = function() {
+	var args = verifyArgs(arguments);
+	this.rawptr.SolveVelocityConstraints(args[0]);
+}
+js.box2d.B2Joint.prototype.getE_atLowerLimit = function() {
+	return this.rawptr.e_atLowerLimit;
+}
+js.box2d.B2Joint.prototype.getE_atUpperLimit = function() {
+	return this.rawptr.e_atUpperLimit;
+}
+js.box2d.B2Joint.prototype.getE_distanceJoint = function() {
+	return this.rawptr.e_distanceJoint;
+}
+js.box2d.B2Joint.prototype.getE_equalLimits = function() {
+	return this.rawptr.e_equalLimits;
+}
+js.box2d.B2Joint.prototype.getE_gearJoint = function() {
+	return this.rawptr.e_gearJoint;
+}
+js.box2d.B2Joint.prototype.getE_inactiveLimit = function() {
+	return this.rawptr.e_inactiveLimit;
+}
+js.box2d.B2Joint.prototype.getE_mouseJoint = function() {
+	return this.rawptr.e_mouseJoint;
+}
+js.box2d.B2Joint.prototype.getE_prismaticJoint = function() {
+	return this.rawptr.e_prismaticJoint;
+}
+js.box2d.B2Joint.prototype.getE_pulleyJoint = function() {
+	return this.rawptr.e_pulleyJoint;
+}
+js.box2d.B2Joint.prototype.getE_revoluteJoint = function() {
+	return this.rawptr.e_revoluteJoint;
+}
+js.box2d.B2Joint.prototype.getE_unknownJoint = function() {
+	return this.rawptr.e_unknownJoint;
+}

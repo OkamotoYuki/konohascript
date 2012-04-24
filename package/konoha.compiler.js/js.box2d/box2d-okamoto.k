@@ -41,3 +41,22 @@ class B2BoxDef extends B2ShapeDef {
 	B2Vec2 extents;
 }
 @Override B2BoxDef B2BoxDef.new();
+
+class B2JointDef {
+	int type;
+//	body1;
+//	body2;
+//  collideConnected;
+}
+@Overrride B2JointDef B2JointDef.new();
+
+class B2RevoluteJointDef {
+//	anchorPoint;
+	float lowerAngle;
+	float upperAngle;
+	float motorSpeed;
+	float motorTorqe;
+// enableLimit;
+	boolean enableMotor;
+}
+@Overrride B2RevoluteJointDef B2RevoluteJointDef.new();

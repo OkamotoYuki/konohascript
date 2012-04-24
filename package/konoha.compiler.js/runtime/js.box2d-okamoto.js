@@ -187,3 +187,62 @@ js.box2d.B2BoxDef.prototype.setExtents = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.extents = args[0];
 }
+
+/* b2JointDef */
+js.box2d.B2JointDef = function(rawptr) {
+	this.rawptr = rawptr;
+}
+js.box2d.B2JointDef.prototype = new konoha.Object();
+js.box2d.B2JointDef.prototype.konohaclass = "js.box2d.B2JointDef";
+js.box2d.B2JointDef.prototype._new = function() {
+	this.rawptr = new b2JointDef();
+	return this;
+}
+js.box2d.B2JointDef.prototype.getType = function() {
+	return this.rawptr.type;
+}
+//js.box2d.B2JointDef.prototype.getUserData = function() {
+//	return this.rawptr.userData;
+//}
+js.box2d.B2JointDef.prototype.getBody1 = function() {
+	return this.rawptr.body1;
+}
+js.box2d.B2JointDef.prototype.getBody2 = function() {
+	return this.rawptr.body2;
+}
+js.box2d.B2JointDef.prototype.getCollideConnected = function() {
+	return this.rawptr.collideConnected;
+}
+
+/* b2RevoluteJointDef */
+js.box2d.B2RevoluteJointDef = function(rawptr) {
+	this.rawptr = rawptr;
+}
+js.box2d.B2RevoluteJointDef.prototype = new js.box2d.B2JointDef();
+js.box2d.B2RevoluteJointDef.prototype.konohaclass = "js.box2d.B2RevoluteJointDef";
+js.box2d.B2RevoluteJointDef.prototype._new = function() {
+	this.rawptr = new b2RevoluteJointDef();
+	return this;
+}
+js.box2d.B2RevoluteJointDef.prototype.getAnchorPoint = function() {
+	return this.rawptr.anchorPoint;
+}
+js.box2d.B2RevoluteJointDef.prototype.getLowerAngle = function() {
+	return this.rawptr.lowerAngle;
+}
+js.box2d.B2RevoluteJointDef.prototype.getUpperAngle = function() {
+	return this.rawptr.upperAngle;
+}
+js.box2d.B2RevoluteJointDef.prototype.getMotorTorque = function() {
+	return this.rawptr.motorTorque;
+}
+js.box2d.B2RevoluteJointDef.prototype.getMotorSpeed = function() {
+	return this.rawptr.motorSpeed;
+}
+js.box2d.B2RevoluteJointDef.prototype.getEnableLimit = function() {
+	return this.rawptr.enableLimit;
+}
+js.box2d.B2RevoluteJointDef.prototype.getEnableMotor = function() {
+	return this.rawptr.enableMotor;
+}
+

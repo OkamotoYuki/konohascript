@@ -86,3 +86,22 @@ class b2PolyDef { //extends b2ShapeDef
 //	Array<> vertices;
 };
 b2PolyDef b2PolyDef.new();
+
+class B2JointDef {
+	int type;
+//	body1;
+//	body2;
+	boolean collideConnected;
+}
+@Overrride B2JointDef B2JointDef.new();
+
+class B2RevoluteJointDef {
+//	anchorPoint;
+	float lowerAngle;
+	float upperAngle;
+	float motorSpeed;
+	float motorTorqe;
+	boolean enableLimit;
+	boolean enableMotor;
+}
+@Overrride B2RevoluteJointDef B2RevoluteJointDef.new();

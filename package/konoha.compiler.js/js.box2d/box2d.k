@@ -72,25 +72,25 @@ class B2Shape {
 	int m_type;
 //	int m_userData;
 
-	B2Shape create(B2ShapeDef def, B2Body body, B2Vec2 center);
-	void destroy(B2Shape shape);
-	void destroyProxy();
-	B2Body getBody();
-	float getMaxRadiusl();
-	B2Shape getNext();
-	B2Vec2 getPosition();
-	B2Mat22 getRotationMatrix();
-	int getType();
-//	getUserData();
-//	void polyCentroid();
-//	void polyMass(B2MassData massData, Array vs, int count, float rho);
-	void quickSync(B2Vec position, B2Mat22 r);
-	void resetProxy(B2BroadPhase broadPhase);
-	void support(float dX, float dY, B2Vec2 out);
-	void synchronize(B2Vec2 position1, B2Mat22 r1, B2Vec2 position2, B2Mat22 r2);
-	boolean testPoint(B2Vec2 p);
+//	B2Shape create(B2ShapeDef def, B2Body body, B2Vec2 center);
+//	void destroy(B2Shape shape);
+//	void destroyProxy();
+//	B2Body getBody();
+//	float getMaxRadiusl();
+//	B2Shape getNext();
+//	B2Vec2 getPosition();
+//	B2Mat22 getRotationMatrix();
+//	int getType();
+////	getUserData();
+////	void polyCentroid();
+////	void polyMass(B2MassData massData, Array vs, int count, float rho);
+//	void quickSync(B2Vec position, B2Mat22 r);
+////	void resetProxy(B2BroadPhase broadPhase);
+//	void support(float dX, float dY, B2Vec2 out);
+//	void synchronize(B2Vec2 position1, B2Mat22 r1, B2Vec2 position2, B2Mat22 r2);
+//	boolean testPoint(B2Vec2 p);
 }
-B2Shape B2Shape.new(B2ShapeDef def, B2Body body);
+//B2Shape B2Shape.new(B2ShapeDef def, B2Body body);
 
 class B2ShapeDef {
 	int type;
@@ -346,11 +346,11 @@ class B2World {
 	int m_bodyCount;
 	B2Body m_bodyDestroyList;
 	B2Body m_bodyList;
-	B2BroadPhase m_broadPhase;
+//	B2BroadPhase m_broadPhase;
 	int contactCount;
 	B2Contact m_contactList;
-	B2ContactManager m_contactManager;
-	B2CollisionFilter;
+//	B2ContactManager m_contactManager;
+	B2CollisionFilter m_filter;
 	B2Vec2 m_gragity;
 	B2Body m_groundBody;
 	int m_jointCount;

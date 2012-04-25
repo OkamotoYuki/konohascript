@@ -312,3 +312,39 @@ class B2Joint {
 	int e_unknownJoint;
 }
 B2Joint B2Joint.new(B2JointDef jd);
+
+class B2ContactNode {
+	B2Contact contact;
+	B2ContactNode next;
+	B2Body other;
+	B2ContactNode prev;
+}
+B2ContactNode B2ContactNode.new();
+
+class B2Contact {
+	int e_destroyFlag;
+	int e_islandFlag;
+	int m_flags;
+	float m_friction;
+	int m_manifoldCount;
+	B2Contact m_next;
+	B2ContactNode m_node1;
+	B2ContactNode m_node2;
+	B2Contact m_prev;
+	float m_restitution;
+	B2Shape m_shape1;
+	B2Shape m_shape2;
+	boolean s_initialized;
+//	Array s_registers;
+
+//	void addType();
+	B2Contact create(B2Shape shape1, B2Shape shape2);
+	void destroy(B2Contact contact);
+	void evaluate();
+	int getManifoldCount();
+//	Array getManifolds();
+	B2Contact getNext();
+	B2Shape getShape1();
+	B2Shape getShape2();
+	void initializeRegisters();
+}

@@ -45,7 +45,7 @@ class B2BoxDef extends B2ShapeDef {
 class B2CircleDef { //extends B2Shapedef
 	int radius;
 }
-B2CircleDef B2CicleDef.new();
+B2CircleDef B2CircleDef.new();
 
 class B2BodyDef {
 	boolean allowSleep;
@@ -60,7 +60,7 @@ class B2BodyDef {
 //	Array<> shapes;
 	dynamic userData;
 
-	void AddShape(B2Shape s);
+	void addShape(B2Shape s);
 };
 B2BodyDef B2BodyDef.new();
 
@@ -68,16 +68,16 @@ class B2Mat22 {
 	B2Vec2 col1;
 	B2Vec2 col2;
 
-	void Abs();
-	void AddM(B2Mat22 m);
-	B2Mat22 Copy();
-	B2Mat22 Invert(B2Mat22 out);
-	void Set(int angle);
-	void SetIdentify();
-	void SetM(B2Mat22 m);
-	void SetVV(B2Vec2 c1, B2Vec2 c2);
-	void SetZero();
-	B2Vec2 Solve(B2Vec2 out, int bX, int bY);
+	void abs();
+	void addM(B2Mat22 m);
+	B2Mat22 copy();
+	B2Mat22 invert(B2Mat22 out);
+	void set(int angle);
+	void setIdentify();
+	void setM(B2Mat22 m);
+	void setVV(B2Vec2 c1, B2Vec2 c2);
+	void setZero();
+	B2Vec2 solve(B2Vec2 out, int bX, int bY);
 };
 B2Mat22 B2Mat22.new();
 
@@ -89,7 +89,7 @@ B2PolyDef B2PolyDef.new();
 
 class B2Body {
 	int e_allowSleepFlag = 0x0010;
-	int e_destroyFlag = ux0020;
+	int e_destroyFlag = 0x0020;
 	int e_frozenFlag = 0x0002;
 	int e_islandFlag = 0x0004;
 	int e_sleepFlag = 0x0008;
@@ -121,40 +121,40 @@ class B2Body {
 	dynamic m_userData;
 	B2World m_world;
 
-	void AllowSleeping(boolean flag);
-	void ApplyForce(B2Vec2 force, B2Vec2 point);
-	void ApplyImpulse(B2Vec2 impulse, B2Vec2 point);
-	void ApplyTorque(int torque);
-	void Destroy();
-	void Freeze();
-	int GetAngularVelocity();
-	B2Vec2 GetCenterPosition();
-	B2ContactNode GetContactList();
-	int GetInertia();
-	B2JointNode GetJointList();
-	B2Vec2 GetLinearVelocity();
-	B2Vec2 GetLocalPoint(B2Vec2 worldPoint);
-	B2Vec2 GetLocalVector(B2Vec2 worldVector);
-	int GetMass();
-	B2Body GetNext();
-	B2Vec2 GetOriginPosition();
-	int GetRotation();
-	B2Mat22 GetRotationMatrix();
-	B2Shape GetShapeList();
-	dynamic GetUserData();
-	B2Vec2 GetWorldPoint(B2Vec2 localPoint);
-	B2Vec2 GetWorldVector(B2Vec2 localVector);
-	boolean IsConnected(B2Body other);
-	boolean IsFrozen();
-	boolean IsSleeping();
-	boolean IsStatic();
-	void QuickSyncShapes();
-	void SetAngularVelocity(int w);
-	void SetCenterPosition(B2Vec2 position, int rotation);
-	void SetLinearVelocity(B2Vec2 v);
-	void SetOriginPosition(B2Vec2 position, int rotation);
-	void SynchronizeShapes();
-	void WakeUp();
+	void allowSleeping(boolean flag);
+	void applyForce(B2Vec2 force, B2Vec2 point);
+	void applyImpulse(B2Vec2 impulse, B2Vec2 point);
+	void applyTorque(int torque);
+	void destroy();
+	void freeze();
+	int getAngularVelocity();
+	B2Vec2 getCenterPosition();
+	B2ContactNode getContactList();
+	int getInertia();
+	B2JointNode getJointList();
+	B2Vec2 getLinearVelocity();
+	B2Vec2 getLocalPoint(B2Vec2 worldPoint);
+	B2Vec2 getLocalVector(B2Vec2 worldVector);
+	int getMass();
+	B2Body getNext();
+	B2Vec2 getOriginPosition();
+	int getRotation();
+	B2Mat22 getRotationMatrix();
+	B2Shape getShapeList();
+	dynamic getUserData();
+	B2Vec2 getWorldPoint(B2Vec2 localPoint);
+	B2Vec2 getWorldVector(B2Vec2 localVector);
+	boolean isConnected(B2Body other);
+	boolean isFrozen();
+	boolean isSleeping();
+	boolean isStatic();
+	void quickSyncShapes();
+	void setAngularVelocity(int w);
+	void setCenterPosition(B2Vec2 position, int rotation);
+	void setLinearVelocity(B2Vec2 v);
+	void setOriginPosition(B2Vec2 position, int rotation);
+	void synchronizeShapes();
+	void wakeUp();
 }
 B2Body B2Body.new(B2BodyDef bd, B2World world);
 
@@ -174,29 +174,29 @@ class B2Contact {
 	boolean s_initialized = false;
 //	Array<> s_registers;
 
-	void AddType(dynamic createFcn, dynamic destroyFcn, int type1, int type2);
-	B2Contact Create(B2Shape shape1, B2Shape shape2, dynamic allocator);
-	void Destroy(cB2Contact contact, dynamic allocator);
-	void Evaluate();
-	int GetManifoldCount();
+	void addType(dynamic createFcn, dynamic destroyFcn, int type1, int type2);
+	B2Contact create(B2Shape shape1, B2Shape shape2, dynamic allocator);
+	void destroy(cB2Contact contact, dynamic allocator);
+	void evaluate();
+	int getManifoldCount();
 //	Array<> GetManifolds();
-	B2Contact GetNext();
-	B2Shape GetShape1();
-	B2Shape GetShape2();
-	void InitializeRegisters();
+	B2Contact getNext();
+	B2Shape getShape1();
+	B2Shape getShape2();
+	void initializeRegisters();
 }
 B2Contact B2Contact.new(B2Shape s1 = null, B2Shape s2 = null);
 
 class B2CollisionFilter {
-	B2CollisionFilter B2_defaultFilter;
-	boolean ShouldCollide(B2Shape shape1, B2Shape shape2);
+	B2CollisionFilter b2_defaultFilter;
+	boolean shouldCollide(B2Shape shape1, B2Shape shape2);
 }
 
 class B2WorldListener {
 	int b2_destroyBody = 1;
 	int b2_freezeBody = 0;
-	int NotifyBoundaryViolated(B2Body body);
-	void NotifyJointDestroyed(B2Joint joint);
+	int notifyBoundaryViolated(B2Body body);
+	void notifyJointDestroyed(B2Joint joint);
 }
 
 class B2JointDef {
@@ -292,7 +292,7 @@ class B2Joint {
 	B2Joint getNext();
 //	B2Vec2 getReactionForce();
 //	int getReactionTorque();
-	int GetType();
+	int getType();
 //	getUserData();
 	void preparePositionSolver();
 	void prepareVelocitySolver();
@@ -311,4 +311,4 @@ class B2Joint {
 	int e_revoluteJoint;
 	int e_unknownJoint;
 }
-B2Joint.new(B2JointDef jd);
+B2Joint B2Joint.new(B2JointDef jd);

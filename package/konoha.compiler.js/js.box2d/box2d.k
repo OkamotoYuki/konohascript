@@ -87,6 +87,14 @@ class B2PolyDef { //extends b2ShapeDef
 };
 B2PolyDef B2PolyDef.new();
 
+class B2ContactNode {
+	B2Contact contact;
+	B2ContactNode next;
+	B2Body other;
+	B2ContactNode prev;
+}
+B2ContactNode B2ContactNode.new();
+
 class B2Body {
 	int e_allowSleepFlag = 0x0010;
 	int e_destroyFlag = 0x0020;
@@ -312,11 +320,3 @@ class B2Joint {
 	int e_unknownJoint;
 }
 B2Joint B2Joint.new(B2JointDef jd);
-
-class B2ContactNode {
-	B2Contact contact;
-	B2ContactNode next;
-	B2Body other;
-	B2ContactNode prev;
-}
-B2ContactNode B2ContactNode.new();

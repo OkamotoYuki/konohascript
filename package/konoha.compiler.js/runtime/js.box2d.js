@@ -27,11 +27,11 @@ js.box2d.B2Vec2.prototype.getY = function() {
 	return this.rawptr.y;
 }
 js.box2d.B2Vec2.prototype.setZero = function() {
-	this.rawptr.setZero();
+	this.rawptr.SetZero();
 }
 js.box2d.B2Vec2.prototype.set = function() {
 	var args = verifyArgs(arguments);
-	this.rawptr.set(args[0], args[1]);
+	this.rawptr.Set(args[0], args[1]);
 }
 js.box2d.B2Vec2.prototype.negative = function() {
 	return new js.box2d.B2Vec2(this.rawptr.Negative());
@@ -1043,7 +1043,7 @@ js.box2d.B2AABB = function(rawptr) {
 	this.rawptr = rawptr;
 }
 js.box2d.B2AABB.prototype = new konoha.Object();
-js.box2d.B2AABB.prototype.konohaclass = "js.box2d.B2JointDef";
+js.box2d.B2AABB.prototype.konohaclass = "js.box2d.B2AABB";
 js.box2d.B2AABB.prototype._new = function() {
 	this.rawptr = new b2AABB();
 	return this;
@@ -1061,6 +1061,9 @@ js.box2d.B2AABB.prototype.getMaxVertex = function() {
 js.box2d.B2AABB.prototype.setMaxVertex = function() {
 	var args = verifyArgs(arguments);
 	this.rawptr.maxVertex = args[0];
+}
+js.box2d.B2AABB.prototype.isValid = function() {
+	var args = verifyArgs(arguments);
 }
 
 /* b2World */
